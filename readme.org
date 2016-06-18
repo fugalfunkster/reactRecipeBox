@@ -1,0 +1,51 @@
+React Recipe Box - Free Code Camp Challenge
+
+* User Stories
+[ ] I can create recipes that have names and ingredients
+[ ] I can see an index view where the names of all the recipes are visible
+[ ] I can click into any of those recipes to view it
+[ ] I can edit these recipes
+[ ] I can delete these recipes
+[ ] All new recipes I add are saved in my browsers local storage. If I refresh the page, these recipes will be there.
+
+* notes
+** prefix local storage keys w/ =_username_recipes=
+** form will require parsing, comma separation of ingredients
+** modals
+
+* Components
+** App
+*** List of Recipes
+**** Recipe Heading - Link
+***** Details
+****** Heading
+****** List of Ingredients
+****** Delete Recipe Button
+****** Edit Button - link to edit recipe modal, with state from parent
+*** Add Recipe Button
+**** Edit Recipe Modal
+***** Nav
+****** Heading
+****** X (leave modal)
+***** Form
+****** Recipe Name Input
+****** Ingredients Input
+***** Edit Recipe Button
+***** Close Modal Button
+
+
+* local storage schema
+
+#+BEGIN_SRC json
+
+[
+  {
+    name: "Lasagna",
+    ingredients: ["flat pasta", "tomato sauce", "mozarella cheese"]
+  }
+]
+
+#+END_SRC
+
+
+* 
