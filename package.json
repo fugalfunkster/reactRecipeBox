@@ -4,7 +4,8 @@
   "description": "React Recipe Box - Free Code Camp Challenge",
   "main": "app.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "p": "webpack -p"
   },
   "repository": {
     "type": "git",

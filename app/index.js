@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
-import { Button, ButtonToolbar, Accordion,
-         Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
+import Button from'react-bootstrap/lib/Button'
+import ButtonToolbar from'react-bootstrap/lib/ButtonToolbar'
+import Accordion from'react-bootstrap/lib/Accordion'
+import Panel from'react-bootstrap/lib/Panel'
+import ListGroup from'react-bootstrap/lib/ListGroup'
+import ListGroupItem from'react-bootstrap/lib/ListGroupItem'
 
 const recipeData = [
   {
