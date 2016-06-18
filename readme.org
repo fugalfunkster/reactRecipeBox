@@ -8,10 +8,12 @@ React Recipe Box - Free Code Camp Challenge
 [ ] I can delete these recipes
 [ ] All new recipes I add are saved in my browsers local storage. If I refresh the page, these recipes will be there.
 
+
 * notes
 ** prefix local storage keys w/ =_username_recipes=
 ** form will require parsing, comma separation of ingredients
 ** modals
+
 
 * Components
 ** App
@@ -46,6 +48,4 @@ React Recipe Box - Free Code Camp Challenge
 ]
 
 #+END_SRC
-
-
-* 
+ 
