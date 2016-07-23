@@ -8,17 +8,20 @@ import ControlLabel from'react-bootstrap/lib/ControlLabel';
 module.exports = React.createClass({
   getInitialState() {
     return {
-      value: ''
+      name: this.props.name,
+      ingredients: this.props.ingredients
     };
   },
-  getValidationState() {
-    const length = this.state.value.length;
-    if (length > 10) return 'success';
-    else if (length > 5) return 'warning';
-    else if (length > 0) return 'error';
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
   },
-  handleChange(e) {
-    this.setState({ value: e.target.value });
+  handleIngredientsChange(e) {
+    this.setState({ ingredients: e.target.value });
+  },
+  setSessionStorage() {
+    sessionStorage.setItem(this.state.name, this.state.ingredients);
+    this.props.onModalChange();
+    this.props.close();
   },
   render() {
     return (
@@ -28,26 +31,24 @@ module.exports = React.createClass({
     </Modal.Header>
     <Modal.Body>
       <form>
-        <FormGroup controlId="formBasicText"
-                   validationState={this.getValidationState()}>
+        <FormGroup controlId="formBasicText">
           <ControlLabel>Recipe Name</ControlLabel>
           <FormControl
             type="text"
-            value={this.state.value}
-            placeholder={this.props.name}
-            onChange={this.handleChange}
+            value={this.state.name}
+            onChange={this.handleNameChange}
           />
           <FormControl.Feedback />
         </FormGroup>
         <FormGroup controlId="formControlsTextarea">
           <ControlLabel>Ingredients</ControlLabel>
-          <FormControl componentClass="textarea" placeholder={this.props.ingredients} />
+          <FormControl componentClass="textarea" value={this.state.ingredients} onChange={this.handleIngredientsChange}/>
         </FormGroup>
       </form>
     </Modal.Body>
     <Modal.Footer>
       <Button onClick={this.props.close}>Cancel</Button>
-      <Button bsStyle="primary">{this.props.success}</Button>
+      <Button bsStyle="primary" onClick={this.setSessionStorage}>{this.props.success}</Button>
     </Modal.Footer>
   </Modal>
     );
