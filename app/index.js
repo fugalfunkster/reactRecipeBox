@@ -1,81 +1,32 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
 
-import Button from'react-bootstrap/lib/Button';
-import ButtonToolbar from'react-bootstrap/lib/ButtonToolbar';
-import Accordion from'react-bootstrap/lib/Accordion';
 import Panel from'react-bootstrap/lib/Panel';
-import ListGroup from'react-bootstrap/lib/ListGroup';
-import ListGroupItem from'react-bootstrap/lib/ListGroupItem';
-import Modal from 'react-bootstrap/lib/Modal';
+import Button from'react-bootstrap/lib/Button';
+import Modal from './modal';
 
-const recipeData = [
-  {
-    name: 'Lasagna',
-    ingredients: ['pasta', 'tomato sauce', 'ground beef', 'mozarella']
-  },
-  {
-    name: 'Pastagana',
-    ingredients: ['pasta', 'tomato sauce', 'ground beef', 'mozarella']
-  },
-  {
-    name: 'Pastagonia',
-    ingredients: ['pasta', 'tomato sauce', 'ground beef', 'mozarella']
-  }
-];
+import RecipeList from './recipeList';
+import recipeData from './data';
 
 const App = React.createClass({
+  getInitialState() {
+    return { showModal: false };
+  },
+  close() {
+    this.setState({ showModal: false });
+  },
+  open() {
+    this.setState({ showModal: true });
+  },
   render () {
     return (
       <Panel>
-        <RecipeList></RecipeList>
-        <Button bsStyle="success">Add A Recipe!</Button>
+        <RecipeList recipeData={recipeData}></RecipeList>
+        <Button bsStyle="success" onClick={this.open} >Add A Recipe!</Button>
+        <Modal title={'Add a New Recipe'} name={"Enter the Recipe's Name"} success={'Add Recipe'} ingredients={"Enter the Recipe's Ingredients, Separated by Commas"} close={this.close} show={this.state.showModal}/>
       </Panel>
     );
   }
 });
-
-const RecipeList = props => {
-  const recipes = recipeData.map((recipe, index) => {
-    return (
-      <Panel header={recipe.name} eventKey={index} key={index}>
-        <IngredientsList ingredients={recipe.ingredients}></IngredientsList>
-        <ButtonToolbar>
-          <Button bsStyle="primary">Edit</Button>
-          <Button bsStyle="danger">Delete</Button>
-        </ButtonToolbar>
-      </Panel>
-    );
-  });
-  return <Accordion>{recipes}</Accordion>;
-};
-
-const IngredientsList = props => {
-  const ingredients = props.ingredients.map((ingredient, index) => {
-    return  <ListGroupItem key={index}>{ingredient}</ListGroupItem>;
-  });
-  return <ListGroup>{ingredients}</ListGroup>;
-};
-
-const modalInstance = (
-  <div className="static-modal">
-    <Modal.Dialog>
-      <Modal.Header>
-        <Modal.Title>Modal title</Modal.Title>
-      </Modal.Header>
-
-      <Modal.Body>
-        One fine body...
-      </Modal.Body>
-
-      <Modal.Footer>
-        <Button>Close</Button>
-        <Button bsStyle="primary">Save changes</Button>
-      </Modal.Footer>
-
-    </Modal.Dialog>
-  </div>
-);
-
 
 ReactDOM.render(<App />, document.getElementById('app'));
