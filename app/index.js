@@ -7,9 +7,9 @@ import Modal from './modal';
 
 import RecipeList from './recipeList';
 
-sessionStorage.setItem('Lasagna', 'pasta,tomato sauceb,ground beef,mozarella');
-sessionStorage.setItem('Pastagna', 'pasta,tomato saucea,ground beef,mozarella');
-sessionStorage.setItem('Pastagonia', 'pasta,tomato sauce,ground beef,mozarella');
+sessionStorage.setItem('Lasagna', 'pasta, tomato sauce, ground beef, mozarella');
+sessionStorage.setItem('Hummus', 'tahini, garbanzo beans, lemon juice, cumin');
+sessionStorage.setItem('Root Beer Float', 'root beer, ice cream');
 
 Object.keys(sessionStorage).forEach(function(key){
    console.log(sessionStorage.getItem(key));

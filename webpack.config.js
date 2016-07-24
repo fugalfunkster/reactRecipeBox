@@ -18,6 +18,7 @@ const common = {
   },
   output: {
     path: PATHS.build,
+    publicPath: '/reactRecipeBox/',
     filename: '[name].js'
   }, plugins: [
     new HtmlWebpackPlugin({

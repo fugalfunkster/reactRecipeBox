@@ -20,8 +20,10 @@ module.exports = React.createClass({
   },
   setSessionStorage() {
     sessionStorage.setItem(this.state.name, this.state.ingredients);
+    this.setState({name: this.props.name, ingredients: this.props.ingredients});
     this.props.onModalChange();
     this.props.close();
+    
   },
   render() {
     return (
@@ -47,7 +49,7 @@ module.exports = React.createClass({
       </form>
     </Modal.Body>
     <Modal.Footer>
-      <Button onClick={this.props.close}>Cancel</Button>
+      <Button onClick={this.props.close} >Cancel</Button>
       <Button bsStyle="primary" onClick={this.setSessionStorage}>{this.props.success}</Button>
     </Modal.Footer>
   </Modal>
