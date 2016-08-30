@@ -1,19 +1,19 @@
-React Recipe Box - Free Code Camp Challenge
 
-* User Stories
-[ ] I can create recipes that have names and ingredients
-[ ] I can see an index view where the names of all the recipes are visible
-[ ] I can click into any of those recipes to view it
-[ ] I can edit these recipes
-[ ] I can delete these recipes
-[ ] All new recipes I add are saved in my browsers local storage. If I refresh the page, these recipes will be there.
+* React Recipe Box
 
+** Description
+This project takes advantage of the browsers local storage to maintain a list of recipes and their ingredients for the user. In addition to React, I used react-bootstrap for the accordion and modal components.
 
-* notes
-** prefix local storage keys w/ =_username_recipes=
-** form will require parsing, comma separation of ingredients
-** modals
+** View Project
+http://www.fugalfunkster.com/reactRecipeBox/
 
+** Objectives [6/6]
+- [X] I can create recipes that have names and ingredients
+- [X] I can see an index view where the names of all the recipes are visible
+- [X] I can click into any of those recipes to view it
+- [X] I can edit these recipes
+- [X] I can delete these recipes
+- [X] All new recipes I add are saved in my browsers local storage. If I refresh the page, these recipes will be there.
 
 * Components
 ** App
