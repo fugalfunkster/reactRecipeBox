@@ -12,7 +12,6 @@ sessionStorage.setItem('Hummus', 'tahini, garbanzo beans, lemon juice, cumin');
 sessionStorage.setItem('Root Beer Float', 'root beer, ice cream');
 
 Object.keys(sessionStorage).forEach(function(key){
-   console.log(sessionStorage.getItem(key));
 });
 
 const App = React.createClass({

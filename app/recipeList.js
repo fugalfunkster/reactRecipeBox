@@ -18,7 +18,7 @@ const RecipeList = React.createClass({
     const recipes = Object.keys(sessionStorage).map((recipe, index) => {
       console.log(recipe, index, sessionStorage.getItem(recipe));
       return (
-        <Panel header={recipe} eventKey={index} key={index}>
+        <Panel header={recipe} eventKey={index} key={recipe}>
           <Recipe header={recipe} ingredients={sessionStorage.getItem(recipe)} onModalChange={this.onModalChange} />
         </Panel>
       );
